@@ -49,6 +49,15 @@ body {
   transition: var(--transition);
 }
 
+body.dark {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+body.dark a {
+  color: #9fdbff;
+}
+
+
 .container {
   width: 100%;
   max-width: var(--max-width);
