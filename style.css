@@ -1055,3 +1055,13 @@ body.dark footer{background:#0f1720;color:#aab2bf}
 .container{max-width:var(--max-width);margin:0 auto;padding:0 20px}
 .header{position:sticky;top:0;background:var(--background);z-index:1000}
 .footer{padding:2rem 0;background:transparent;text-align:center}
+
+.desktop-toggle {
+  display: flex !important;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .desktop-toggle { display: none !important; }
+  .mobile-controls { display: flex !important; }
+}
