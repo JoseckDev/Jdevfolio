@@ -91,10 +91,10 @@ tmp/
 temp/
 
 # Images that might be added later
-images/*.jpg
-images/*.png
-images/*.gif
-images/*.svg
+# images/*.jpg
+# images/*.png
+# images/*.gif
+# images/*.svg
 !images/favicon.ico
 !images/apple-touch-icon.png
 !images/preview.jpg
