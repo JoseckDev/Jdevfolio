@@ -902,156 +902,293 @@ section {
   }
 }
 
-/* === CLEANED/OVERRIDES === */
 
-/* === Merged & Cleaned CSS additions ===
-   Paste at the end of your existing style.css (recommended)
-*/
+/* === Script Integration Enhancements === */
 
-:root{
-  --background:#ffffff;
-  --text-color:#111827;
-  --primary-color:#0f172a;
-  --secondary-color:#9fdbff;
-  --accent-color:#ef4444;
-  --header-height:72px;
-  --max-width:1100px;
+/* Header shadow when scrolled */
+.header.scrolled {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Basic helper / reset */
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--background);color:var(--text-color);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;line-height:1.5}
-a{color:inherit;text-decoration:none}
-
-/* Nav container */
-.nav-container, header .nav-container, .nav-container .container {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  max-width:var(--max-width);
-  margin:0 auto;
-  padding:0 20px;
-  height:var(--header-height);
+/* Project filtering hidden state */
+.project-card.hidden {
+  opacity: 0;
+  transform: scale(0.9);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Nav links (UL) */
-.nav-links{
-  display:flex;
-  gap:1.25rem;
-  align-items:center;
-  list-style:none;
-  margin:0;
-  padding:0;
+/* === Visual Polish Enhancements === */
+
+/* Button hover effect */
+.btn {
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.nav-links li{display:flex;align-items:center}
-
-/* push last <li> (toggle) to right on desktop */
-.nav-links li:last-child{margin-left:auto}
-
-/* Hamburger / mobile button */
-.hamburger{display:inline-block;width:18px;height:2px;background:#222;border-radius:2px;margin:3px 0}
-.mobile-menu-toggle{background:transparent;border:none;cursor:pointer;padding:8px}
-.mobile-menu-toggle.desktop-hidden{display:none}
-
-/* Mobile controls group (hidden on desktop) */
-.mobile-controls{display:none}
-
-/* Theme toggle */
-.theme-toggle{
-  position:relative;
-  width:50px;
-  height:25px;
-  border-radius:25px;
-  border:none;
-  cursor:pointer;
-  background:#ddd;
-  padding:0;
-  display:flex;
-  align-items:center;
-  justify-content:flex-start;
+.btn:hover {
+  transform: translateY(-2px);
 }
-.theme-toggle .toggle-circle{
-  position:absolute;
-  top:3px;
-  left:3px;
-  width:19px;
-  height:19px;
-  background:#fff;
-  border-radius:50%;
-  transition:transform 0.3s ease;
+
+/* Links hover effect */
+a:hover {
+  color: var(--secondary-color);
 }
-body.dark .theme-toggle{background:var(--secondary-color)}
-body.dark .theme-toggle .toggle-circle{transform:translateX(25px)}
 
-/* Header shadow */
-.header.scrolled{box-shadow:0 4px 12px rgba(0,0,0,0.15)}
-
-/* Project card */
-.project-card{background:#fff;border-radius:8px;overflow:hidden;transition:transform 0.3s ease,box-shadow 0.3s ease}
-.project-card:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,0.08)}
-.project-card.hidden{opacity:0;transform:scale(0.95);pointer-events:none;transition:opacity 0.3s ease,transform 0.3s ease}
-
-/* Buttons */
-.btn{display:inline-block;padding:0.6rem 1rem;border-radius:8px;border:none;cursor:pointer;transition:background-color 0.3s ease,transform 0.2s ease}
-.btn-primary{background:var(--primary-color);color:#fff}
-.btn-secondary{background:transparent;border:1px solid var(--primary-color);color:var(--primary-color)}
-.btn:hover{transform:translateY(-2px)}
-
-/* Section reveal */
-section{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease}
-section.visible{opacity:1;transform:translateY(0)}
-
-/* Skills */
-.skill-bar{background:#f0f0f0;border-radius:999px;height:10px;overflow:hidden}
-.skill-progress{height:100%;background:linear-gradient(90deg,var(--secondary-color),#7ecaff);width:0;transition:width 0.8s ease}
-
-/* Contact form status */
-.form-status{margin-top:15px;text-align:center;font-weight:500;opacity:0;transition:opacity 0.5s ease}
-.form-status.visible{opacity:1}
-.form-status.success{color:var(--secondary-color)}
-.form-status.error{color:var(--accent-color)}
-
-/* Dark mode overrides */
-body.dark{
-  background:#0b0f13;
-  color:#e6eef8;
+/* Project card hover */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-body.dark a{color:var(--secondary-color)}
-body.dark .project-card{background:#121214;border:1px solid #1f2937;color:#e6eef8}
-body.dark .project-card:hover{box-shadow:0 8px 20px rgba(0,0,0,0.6)}
-body.dark .skill-bar{background:#1f2937}
-body.dark .skill-progress{background:var(--secondary-color)}
-body.dark .contact-form input, body.dark .contact-form textarea{background:#0f1720;color:#e6eef8;border:1px solid #2b2f36}
-body.dark footer{background:#0f1720;color:#aab2bf}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
 
-/* Responsive */
-@media (max-width:768px){
-  .nav-links{
-    position:absolute;
-    top:70px;
-    right:0;
-    background:var(--background);
-    flex-direction:column;
-    align-items:flex-start;
-    width:220px;
-    padding:1rem;
-    border-radius:8px;
-    transform:translateX(100%);
-    opacity:0;
-    pointer-events:none;
-    transition:transform 0.3s ease,opacity 0.3s ease;
+/* Section fade-in on scroll */
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Contact form status messages */
+.form-status {
+  margin-top: 15px;
+  text-align: center;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.form-status.visible {
+  opacity: 1;
+}
+
+.form-status.success {
+  color: var(--secondary-color);
+}
+
+.form-status.error {
+  color: var(--accent-color);
+}
+
+/* Nav links inline */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure toggle looks aligned with nav links */
+.nav-links li {
+  display: flex;
+  align-items: center;
+}
+
+/* Theme toggle inside nav */
+.theme-toggle {
+  position: relative;
+  width: 50px;
+  height: 25px;
+  background: #ddd;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+}
+.theme-toggle .toggle-circle {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 19px;
+  height: 19px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+/* Dark mode toggle styles */
+body.dark .theme-toggle {
+  background: #9fdbff;
+}
+body.dark .theme-toggle .toggle-circle {
+  transform: translateX(25px);
+}
+
+/* Responsive (bigger toggle on mobile) */
+@media (max-width: 768px) {
+  .theme-toggle {
+    width: 60px;
+    height: 30px;
   }
-  .nav-links.active{transform:translateX(0);opacity:1;pointer-events:auto}
-  .mobile-controls{display:flex;align-items:center;gap:0.5rem;position:absolute;top:12px;right:12px;z-index:1002}
-  .desktop-toggle{display:none}
-  .mobile-menu-toggle.desktop-hidden{display:inline-block}
-  .theme-toggle,.mobile-menu-toggle{width:45px;height:45px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#ddd;border:none;padding:0;cursor:pointer}
-  .theme-toggle .toggle-circle{width:20px;height:20px;left:8px;transition:transform 0.3s ease}
-  body.dark .theme-toggle{background:var(--secondary-color)}
-  body.dark .theme-toggle .toggle-circle{transform:translateX(12px)}
+  .theme-toggle .toggle-circle {
+    width: 24px;
+    height: 24px;
+  }
 }
 
-/* Container/header/footer utilities */
-.container{max-width:var(--max-width);margin:0 auto;padding:0 20px}
-.header{position:sticky;top:0;background:var(--background);z-index:1000}
-.footer{padding:2rem 0;background:transparent;text-align:center}
+/* Push theme toggle to far right */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li:last-child {
+  margin-left: auto; /* pushes last <li> (toggle) to far right */
+}
+
+/* Desktop (default) */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li:last-child {
+  margin-left: auto; /* keeps toggle on far right */
+}
+
+/* Mobile (toggle stays visible even when nav collapses) */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: var(--background, #fff);
+    flex-direction: column;
+    align-items: flex-start;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Force toggle outside collapsible menu */
+  .nav-links li:last-child {
+    display: none; /* hide toggle inside menu */
+  }
+
+  .theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 60px; /* sits beside mobile menu toggle */
+    z-index: 1001;
+  }
+
+  .mobile-menu-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1002;
+  }
+}
+
+/* Mobile control group (theme toggle + menu) */
+@media (max-width: 768px) {
+  .theme-toggle,
+  .mobile-menu-toggle {
+    position: static;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.5rem;
+    background: #ddd;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .mobile-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1002;
+  }
+
+  /* Adjust toggle circle inside rounded button */
+  .theme-toggle {
+    padding: 0;
+    position: relative;
+  }
+  .theme-toggle .toggle-circle {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    transition: transform 0.3s ease;
+  }
+  body.dark .theme-toggle {
+    background: #9fdbff;
+  }
+  body.dark .theme-toggle .toggle-circle {
+    transform: translateX(12px);
+  }
+}
+
+/* Desktop toggle visible, mobile hidden */
+.desktop-toggle { display: block; }
+.mobile-controls { display: none; }
+
+/* Mobile: show controls, hide desktop toggle */
+@media (max-width: 768px) {
+  .desktop-toggle { display: none; }
+  .mobile-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1002;
+  }
+
+  .theme-toggle,
+  .mobile-menu-toggle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: #ddd;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  body.dark .theme-toggle {
+    background: #9fdbff;
+  }
+}

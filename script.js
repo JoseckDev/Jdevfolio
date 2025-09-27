@@ -1,182 +1,154 @@
-// script.js
+// script.js - cleaned & merged
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('.header');
+  const navMenu = document.querySelector('#nav-menu');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const skillBars = document.querySelectorAll('.skill-progress');
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+  const contactForm = document.getElementById('contact-form');
+  const formStatusEl = document.getElementById('form-status');
 
-document.addEventListener("DOMContentLoaded", () => {
-  const header = document.querySelector(".header");
-  const themeToggle = document.getElementById("theme-toggle");
-  const mobileToggle = document.querySelector(".mobile-menu-toggle");
-  const navMenu = document.getElementById("nav-menu");
-  const navLinks = document.querySelectorAll(".nav-link");
-  const skillBars = document.querySelectorAll(".skill-progress");
-  const filterBtns = document.querySelectorAll(".filter-btn");
-  const projectCards = document.querySelectorAll(".project-card");
-  const form = document.getElementById("contact-form");
-  const formStatus = document.getElementById("form-status");
-
-  /* ----------------------------
-     Header shadow on scroll
-  ---------------------------- */
-  window.addEventListener("scroll", () => {
-    header.classList.toggle("scrolled", window.scrollY > 50);
+  /* Header shadow */
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 50);
   });
 
-  /* ----------------------------
-     Dark/Light Mode Toggle
-  ---------------------------- */
-  if (themeToggle) {
-    const currentTheme = localStorage.getItem("theme") || "light";
-    document.body.classList.toggle("dark", currentTheme === "dark");
-
-    themeToggle.addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-      const newTheme = document.body.classList.contains("dark") ? "dark" : "light";
-      localStorage.setItem("theme", newTheme);
-      themeToggle.textContent = newTheme === "dark" ? "☀️" : "🌙";
-    });
-  }
-
-  /* ----------------------------
-     Mobile Menu Toggle
-  ---------------------------- */
-  if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener("click", () => {
-      const expanded = mobileToggle.getAttribute("aria-expanded") === "true";
-      mobileToggle.setAttribute("aria-expanded", !expanded);
-      navMenu.classList.toggle("active");
-    });
-
-    navLinks.forEach((link) =>
-      link.addEventListener("click", () => {
-        navMenu.classList.remove("active");
-        mobileToggle.setAttribute("aria-expanded", "false");
-      })
-    );
-  }
-
-  /* ----------------------------
-     Active Nav Link on Scroll
-  ---------------------------- */
-  window.addEventListener("scroll", () => {
-    let current = "";
-    document.querySelectorAll("section[id]").forEach((section) => {
-      const sectionTop = section.offsetTop - 70;
-      if (window.scrollY >= sectionTop) {
-        current = section.getAttribute("id");
-      }
-    });
-
-    navLinks.forEach((link) => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === `#${current}`) {
-        link.classList.add("active");
-      }
+  /* Mobile menu toggles (may be multiple buttons) */
+  const mobileToggles = document.querySelectorAll('.mobile-menu-toggle');
+  mobileToggles.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      // Toggle aria on all mobile buttons for consistency
+      mobileToggles.forEach(b => b.setAttribute('aria-expanded', String(!expanded)));
+      navMenu.classList.toggle('active');
     });
   });
 
-  /* ----------------------------
-     Skills Animation on Scroll
-  ---------------------------- */
-  function animateSkills() {
-    skillBars.forEach((bar) => {
-      const barTop = bar.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
+  /* Close mobile menu when nav link clicked */
+  navLinks.forEach(link => link.addEventListener('click', () => {
+    navMenu.classList.remove('active');
+    mobileToggles.forEach(b => b.setAttribute('aria-expanded', 'false'));
+  }));
 
-      if (barTop < windowHeight - 100 && !bar.classList.contains("animated")) {
-        const targetWidth = bar.getAttribute("aria-valuenow") + "%";
-        bar.style.width = "0"; // reset
+  /* Dark mode toggles (desktop + mobile) */
+  const themeToggleDesktop = document.getElementById('theme-toggle-desktop');
+  const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+  const themeToggles = [themeToggleDesktop, themeToggleMobile].filter(Boolean);
+
+  if (themeToggles.length) {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const currentTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+    document.body.classList.toggle('dark', currentTheme === 'dark');
+
+    themeToggles.forEach(t => {
+      t.addEventListener('click', () => {
+        const isDark = document.body.classList.toggle('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      });
+    });
+  }
+
+  /* Active nav link on scroll */
+  const handleActiveNav = () => {
+    let current = '';
+    document.querySelectorAll('section[id]').forEach(section => {
+      const sectionTop = section.offsetTop - 80;
+      if (window.scrollY >= sectionTop) current = section.getAttribute('id');
+    });
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+    });
+  };
+  window.addEventListener('scroll', handleActiveNav);
+  handleActiveNav();
+
+  /* Skills animation (once per bar) */
+  const animateSkills = () => {
+    skillBars.forEach(bar => {
+      if (bar.classList.contains('animated')) return;
+      const top = bar.getBoundingClientRect().top;
+      if (top < window.innerHeight - 100) {
+        const target = bar.getAttribute('aria-valuenow') + '%';
+        bar.style.width = '0';
         setTimeout(() => {
-          bar.style.width = targetWidth;
-          bar.classList.add("animated");
+          bar.style.width = target;
+          bar.classList.add('animated');
         }, 100);
       }
     });
-  }
-  window.addEventListener("scroll", animateSkills);
-  animateSkills(); // run on load in case already visible
+  };
+  window.addEventListener('scroll', animateSkills);
+  animateSkills();
 
-  /* ----------------------------
-     Project Filtering
-  ---------------------------- */
-  if (filterBtns.length) {
-    filterBtns.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        filterBtns.forEach((b) => b.classList.remove("active"));
-        btn.classList.add("active");
-        const category = btn.getAttribute("data-filter");
-
-        projectCards.forEach((card) => {
-          card.classList.add("hidden");
-          if (category === "all" || card.classList.contains(category)) {
-            setTimeout(() => card.classList.remove("hidden"), 100);
+  /* Project filtering (if filter buttons exist) */
+  if (filterBtns.length && projectCards.length) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const category = btn.dataset.filter;
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        projectCards.forEach(card => {
+          if (category === 'all' || card.dataset.category === category) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
           }
         });
       });
     });
   }
 
-  /* ----------------------------
-     Contact Form Handling
-  ---------------------------- */
-  if (form && formStatus) {
-    form.addEventListener("submit", async (e) => {
+  /* Contact form handling */
+  if (contactForm && formStatusEl) {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      formStatus.textContent = "Sending...";
-      formStatus.className = "form-status visible";
-
+      formStatusEl.textContent = 'Sending...';
+      formStatusEl.classList.add('visible');
       try {
-        const response = await fetch(form.action, {
-          method: form.method,
-          body: new FormData(form),
-          headers: { Accept: "application/json" },
+        const res = await fetch(contactForm.action, {
+          method: contactForm.method,
+          body: new FormData(contactForm),
+          headers: { Accept: 'application/json' },
         });
-
-        if (response.ok) {
-          formStatus.textContent = "✅ Thanks! Your message has been sent.";
-          form.reset();
+        if (res.ok) {
+          formStatusEl.textContent = '✅ Thanks! Your message has been sent.';
+          formStatusEl.classList.add('success');
+          contactForm.reset();
         } else {
-          const data = await response.json();
-          if (Object.hasOwn(data, "errors")) {
-            formStatus.textContent = data.errors.map((err) => err.message).join(", ");
-          } else {
-            formStatus.textContent = "⚠️ Oops! Something went wrong.";
-          }
+          const data = await res.json();
+          formStatusEl.textContent = data?.errors?.map(err => err.message).join(', ') || '⚠️ Oops! Something went wrong.';
+          formStatusEl.classList.add('error');
         }
-      } catch (error) {
-        formStatus.textContent = "❌ Network error. Please try again.";
+      } catch (err) {
+        formStatusEl.textContent = '❌ Network error. Please try again.';
+        formStatusEl.classList.add('error');
       }
-
-      // fade out status after 5s
       setTimeout(() => {
-        formStatus.classList.remove("visible");
+        formStatusEl.classList.remove('visible', 'success', 'error');
+        formStatusEl.textContent = '';
       }, 5000);
     });
   }
 
-  /* ----------------------------
-   Reveal Sections on Scroll
-    ---------------------------- */
-    const sections = document.querySelectorAll("section");
-    const revealOnScroll = () => {
-      const windowHeight = window.innerHeight;
-      sections.forEach((sec) => {
-        const top = sec.getBoundingClientRect().top;
-        if (top < windowHeight - 100) {
-          sec.classList.add("visible");
-        }
-      });
-    };
-    window.addEventListener("scroll", revealOnScroll);
-    revealOnScroll();
+  /* Reveal sections on scroll */
+  const sections = document.querySelectorAll('section');
+  const revealOnScroll = () => {
+    sections.forEach(sec => {
+      const top = sec.getBoundingClientRect().top;
+      if (top < window.innerHeight - 100) sec.classList.add('visible');
+    });
+  };
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll();
 
-  /* ----------------------------
-     Smooth Scrolling
-  ---------------------------- */
-  navLinks.forEach((link) => {
-    link.addEventListener("click", (e) => {
+  /* Smooth anchor scrolling */
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
       if (link.hash) {
         e.preventDefault();
-        document.querySelector(link.hash).scrollIntoView({
-          behavior: "smooth",
-        });
+        document.querySelector(link.hash).scrollIntoView({ behavior: 'smooth' });
       }
     });
   });

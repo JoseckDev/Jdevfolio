@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Joseck Dev | Frontend Developer Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Meta Tags for SEO -->
+  <!-- SEO Meta Tags -->
   <meta name="description" content="Joseck's portfolio – Frontend developer skilled in HTML, CSS, JavaScript, React, and UI/UX design. Explore my projects, skills, and get in touch.">
   <meta name="keywords" content="Frontend Developer, Web Developer, Portfolio, HTML, CSS, JavaScript, React, UI/UX">
   <meta name="author" content="Joseck">
 
-  <!-- Open Graph (for social media sharing) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Joseck | Frontend Developer Portfolio">
   <meta property="og:description" content="Explore my portfolio – showcasing projects, skills, and ways to get in touch.">
   <meta property="og:image" content="https://joseckdev.buzz/images/profile.jpg">
@@ -24,38 +23,48 @@
   <meta name="twitter:image" content="https://joseckdev.buzz/images/profile.jpg">
   <meta name="twitter:site" content="@joseckdev">
 
-  <!-- Favicon -->
+  <!-- Favicon & Fonts -->
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-
-  <!-- Preload -->
-  <link rel="preload" href="style.css" as="style">
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
-
-  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+  <title>Joseck | Frontend Developer</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <header class="header">
-    <nav class="nav" role="navigation" aria-label="Main navigation">
-      <div class="nav-container">
+    <nav class="nav-container" role="navigation" aria-label="Main navigation">
+      <div class="container">
         <a href="/" class="logo" aria-label="Joseck Dev Homepage">JoseckDev</a>
-        
-        <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+
+        <!-- Desktop hamburger (hidden on desktop by default; visible on small screens if needed) -->
+        <button class="mobile-menu-toggle desktop-hidden" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
           <span class="hamburger"></span><span class="hamburger"></span><span class="hamburger"></span>
         </button>
-        
+
         <ul id="nav-menu" class="nav-links">
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#projects" class="nav-link">Projects</a></li>
           <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
-          <li><button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button></li>
+          <!-- Desktop inline toggle (hidden on mobile via CSS) -->
+          <li class="desktop-toggle">
+            <button id="theme-toggle-desktop" class="theme-toggle" aria-label="Toggle dark mode">
+              <span class="toggle-circle"></span>
+            </button>
+          </li>
         </ul>
+
+        <!-- Mobile controls (visible only on mobile) -->
+        <div class="mobile-controls">
+          <button id="theme-toggle-mobile" class="theme-toggle" aria-label="Toggle dark mode">
+            <span class="toggle-circle"></span>
+          </button>
+          <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open navigation menu">☰</button>
+        </div>
       </div>
     </nav>
   </header>
