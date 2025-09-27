@@ -5,17 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Joseck Dev | Frontend Developer Portfolio</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Joseck's Portfolio - Frontend Developer specializing in creating responsive, accessible, and performant web applications.">
-  <meta name="author" content="Joseck Dev">
+  <!-- Meta Tags for SEO -->
+  <meta name="description" content="Joseck's portfolio – Frontend developer skilled in HTML, CSS, JavaScript, React, and UI/UX design. Explore my projects, skills, and get in touch.">
+  <meta name="keywords" content="Frontend Developer, Web Developer, Portfolio, HTML, CSS, JavaScript, React, UI/UX">
+  <meta name="author" content="Joseck">
 
-  <!-- Social Media Preview -->
-  <meta property="og:title" content="Joseck Dev | Frontend Developer Portfolio">
-  <meta property="og:description" content="Check out my projects, skills, and contact details.">
-  <meta property="og:type" content="website">
+  <!-- Open Graph (for social media sharing) -->
+  <meta property="og:title" content="Joseck | Frontend Developer Portfolio">
+  <meta property="og:description" content="Explore my portfolio – showcasing projects, skills, and ways to get in touch.">
+  <meta property="og:image" content="https://joseckdev.buzz/images/profile.jpg">
   <meta property="og:url" content="https://joseckdev.buzz">
-  <meta property="og:image" content="https://joseckdev.buzz/images/preview.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Joseck | Frontend Developer Portfolio">
+  <meta name="twitter:description" content="Explore my portfolio – showcasing projects, skills, and ways to get in touch.">
+  <meta name="twitter:image" content="https://joseckdev.buzz/images/profile.jpg">
   <meta name="twitter:site" content="@joseckdev">
 
   <!-- Favicon -->
@@ -88,11 +94,23 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
           <div class="about-text">
-            <p>I'm a passionate frontend developer with a keen eye for design and a love for creating intuitive, user-friendly web experiences...</p>
-            <a href="#contact" class="btn btn-primary">Let's Connect</a>
+            <p>
+              I'm a passionate <strong>frontend developer</strong> with a keen eye for design and a love for building 
+              intuitive, user-friendly web experiences. I enjoy transforming complex ideas into clean, 
+              elegant, and responsive interfaces.
+            </p>
+            <p>
+              Beyond coding, I’m curious about <strong>UI/UX best practices</strong>, performance optimization, 
+              and accessibility. My mission is to create digital experiences that not only look great but 
+              also feel seamless and inclusive for everyone.
+            </p>
+            <a href="#contact" class="btn btn-primary">Let’s Connect</a>
           </div>
+        
           <figure class="about-image">
-            <img src="https://joseckdev.buzz/images/about.jpg" alt="Joseck working on a project" width="400" height="300" loading="lazy">
+            <img src="https://joseckdev.buzz/images/about.jpg" 
+                 alt="Joseck working on a project" 
+                 width="400" height="300" loading="lazy">
             <figcaption>Joseck at work</figcaption>
           </figure>
         </div>
@@ -104,9 +122,13 @@
       <div class="container">
         <h2 class="section-title">Featured Projects</h2>
         <div class="project-grid">
+        
+          <!-- Project 1 -->
           <div class="project-card">
             <div class="project-image">
-              <img src="https://joseckdev.buzz/images/project1.png" alt="E-commerce Website Project" width="600" height="400" loading="lazy">
+              <img src="https://joseckdev.buzz/images/project1.png" 
+                   alt="E-commerce Website Project" 
+                   width="600" height="400" loading="lazy">
               <div class="project-overlay">
                 <a href="https://github.com/joseckdev/project1" target="_blank" rel="noopener" aria-label="View project on GitHub">
                   <svg><use xlink:href="icons.svg#icon-project"></use></svg>
@@ -126,6 +148,59 @@
               </div>
             </div>
           </div>
+        
+          <!-- Project 2 -->
+          <div class="project-card">
+            <div class="project-image">
+              <img src="https://joseckdev.buzz/images/project2.png" 
+                   alt="Portfolio Website Project" 
+                   width="600" height="400" loading="lazy">
+              <div class="project-overlay">
+                <a href="https://github.com/joseckdev/project2" target="_blank" rel="noopener" aria-label="View project on GitHub">
+                  <svg><use xlink:href="icons.svg#icon-project"></use></svg>
+                </a>
+                <a href="https://joseckdev.buzz/demo/project2" target="_blank" rel="noopener" aria-label="View live demo">
+                  <svg><use xlink:href="icons.svg#icon-live"></use></svg>
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Personal Portfolio</h3>
+              <p>A modern and responsive portfolio to showcase my work, skills, and contact details.</p>
+              <div class="project-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Project 3 -->
+          <div class="project-card">
+            <div class="project-image">
+              <img src="https://joseckdev.buzz/images/project3.png" 
+                   alt="React Dashboard Project" 
+                   width="600" height="400" loading="lazy">
+              <div class="project-overlay">
+                <a href="https://github.com/joseckdev/project3" target="_blank" rel="noopener" aria-label="View project on GitHub">
+                  <svg><use xlink:href="icons.svg#icon-project"></use></svg>
+                </a>
+                <a href="https://joseckdev.buzz/demo/project3" target="_blank" rel="noopener" aria-label="View live demo">
+                  <svg><use xlink:href="icons.svg#icon-live"></use></svg>
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>React Dashboard</h3>
+              <p>An interactive dashboard built with React, featuring charts, authentication, and API integration.</p>
+              <div class="project-tags">
+                <span class="tag">React</span>
+                <span class="tag">Tailwind</span>
+                <span class="tag">API</span>
+              </div>
+            </div>
+          </div>
+        
         </div>
         <div class="projects-cta">
           <a href="https://github.com/joseckdev" class="btn btn-secondary" target="_blank" rel="noopener">View More on GitHub</a>
@@ -137,6 +212,7 @@
     <section id="skills" class="skills">
       <div class="container">
         <h2 class="section-title">My Skills</h2>
+      
         <div class="skill-item">
           <div class="skill-info">
             <span class="skill-name">HTML5</span>
@@ -146,6 +222,46 @@
             <div class="skill-progress" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%"></div>
           </div>
         </div>
+      
+        <div class="skill-item">
+          <div class="skill-info">
+            <span class="skill-name">CSS3</span>
+            <span class="skill-level">85%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%"></div>
+          </div>
+        </div>
+      
+        <div class="skill-item">
+          <div class="skill-info">
+            <span class="skill-name">JavaScript</span>
+            <span class="skill-level">80%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div>
+          </div>
+        </div>
+      
+        <div class="skill-item">
+          <div class="skill-info">
+            <span class="skill-name">React</span>
+            <span class="skill-level">75%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+          </div>
+        </div>
+      
+        <div class="skill-item">
+          <div class="skill-info">
+            <span class="skill-name">UI/UX Design</span>
+            <span class="skill-level">70%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%"></div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -153,44 +269,62 @@
     <section id="contact" class="contact">
       <div class="container">
         <h2 class="section-title">Get In Touch</h2>
+
         <div class="contact-details">
           <div class="contact-item">
             <svg class="contact-icon"><use xlink:href="icons.svg#icon-email"></use></svg>
-            <p>hello@joseckdev.buzz</p>
+            <p><a href="mailto:hello@joseckdev.buzz">hello@joseckdev.buzz</a></p>
           </div>
           <div class="contact-item">
             <svg class="contact-icon"><use xlink:href="icons.svg#icon-phone"></use></svg>
-            <p>+1 (123) 456-7890</p>
+            <p><a href="tel:+11234567890">+1 (123) 456-7890</a></p>
           </div>
           <div class="contact-item">
             <svg class="contact-icon"><use xlink:href="icons.svg#icon-location"></use></svg>
             <p>San Francisco, CA</p>
           </div>
         </div>
-        <form id="contact-form" class="contact-form" action="https://formspree.io/f/xnngneva" method="POST">
+      
+        <form id="contact-form" class="contact-form" 
+              action="https://formspree.io/f/xnngneva" 
+              method="POST" novalidate>
+
           <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your Name" required autocomplete="name">
+            <input type="text" id="name" name="name" 
+                   placeholder="Your Name" required 
+                   autocomplete="name">
           </div>
+        
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Your Email" required autocomplete="email">
+            <input type="email" id="email" name="email" 
+                   placeholder="Your Email" required 
+                   autocomplete="email">
           </div>
+        
           <div class="form-group">
             <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" placeholder="Subject" autocomplete="subject">
+            <input type="text" id="subject" name="subject" 
+                   placeholder="Subject" autocomplete="organization-title">
           </div>
+        
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+            <textarea id="message" name="message" 
+                      placeholder="Your Message" rows="5" required></textarea>
           </div>
+        
           <div class="form-submit">
             <button type="submit" class="btn btn-primary">Send Message</button>
           </div>
+        
+          <!-- For live feedback after submission -->
           <div id="form-status" class="form-status" aria-live="polite"></div>
         </form>
       </div>
     </section>
+
   </main>
 
   <!-- Footer -->
