@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Joseck's portfolio – Frontend developer skilled in HTML, CSS, JavaScript, React, and UI/UX design. Explore my projects, skills, and get in touch.">
+  <meta name="keywords" content="Frontend Developer, Web Developer, Portfolio, HTML, CSS, JavaScript, React, UI/UX">
+  <meta name="author" content="Joseck">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Joseck | Frontend Developer Portfolio">
+  <meta property="og:description" content="Explore my portfolio – showcasing projects, skills, and ways to get in touch.">
+  <meta property="og:image" content="https://joseckdev.buzz/images/profile.jpg">
+  <meta property="og:url" content="https://joseckdev.buzz">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Joseck | Frontend Developer Portfolio">
+  <meta name="twitter:description" content="Explore my portfolio – showcasing projects, skills, and ways to get in touch.">
+  <meta name="twitter:image" content="https://joseckdev.buzz/images/profile.jpg">
+  <meta name="twitter:site" content="@joseckdev">
+
+  <!-- Favicon & Fonts -->
+  <link rel="icon" type="image/x-icon" href="https://joseckdev.buzz/images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <title>Joseck | Frontend Developer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="cursor">
+    <div class="cursor-dot"></div>
+  </div>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="loader"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav-container" role="navigation" aria-label="Main navigation">
+      <div class="container">
+        <a href="/" class="logo" aria-label="Joseck Dev Homepage">
+          <span class="logo-text">Joseck</span>
+          <span class="logo-dot"></span>
+        </a>
+
+        <ul id="nav-menu" class="nav-links">
+          <li><a href="#home" class="nav-link"><span>01</span> Home</a></li>
+          <li><a href="#about" class="nav-link"><span>02</span> About</a></li>
+          <li><a href="#projects" class="nav-link"><span>03</span> Projects</a></li>
+          <li><a href="#skills" class="nav-link"><span>04</span> Skills</a></li>
+          <li><a href="#contact" class="nav-link"><span>05</span> Contact</a></li>
+          <li class="desktop-toggle">
+            <button id="theme-toggle-desktop" class="theme-toggle" aria-label="Toggle dark mode">
+              <i class="fas fa-sun"></i>
+              <i class="fas fa-moon"></i>
+            </button>
+          </li>
+        </ul>
+
+        <!-- Mobile controls -->
+        <div class="mobile-controls">
+          <button id="theme-toggle-mobile" class="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
+          </button>
+          <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+            <span class="hamburger"></span>
+            <span class="hamburger"></span>
+            <span class="hamburger"></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="particles-bg"></div>
+      <div class="hero-3d-container">
+        <div class="hero-3d-layer" data-speed="0.2"></div>
+        <div class="hero-3d-layer" data-speed="0.5"></div>
+      </div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="greeting">Hello, I'm</div>
+          <h1 class="hero-title">
+            <span class="highlight">Joseck</span>
+            <span class="lastname">David</span>
+          </h1>
+          <div class="hero-subtitle">
+            <span class="typing-text">Frontend Developer</span>
+          </div>
+          <p class="hero-description">
+            I create responsive, accessible, and performant web applications with modern technologies.
+            I transform complex ideas into clean, elegant, and user-friendly interfaces.
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">
+              <span>View My Work</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <span>Get In Touch</span>
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+          <div class="hero-social">
+            <a href="https://github.com/joseckdev" target="_blank" rel="noopener" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/joseckdev" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://twitter.com/joseckdev" target="_blank" rel="noopener" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://codepen.io/joseckdev" target="_blank" rel="noopener" aria-label="CodePen">
+              <i class="fab fa-codepen"></i>
+            </a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="image-container">
+            <div class="glow-effect"></div>
+            <img src="https://joseckdev.buzz/images/profile.jpg" alt="Joseck - Frontend Developer" width="400" height="400" loading="lazy">
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+        <div class="arrows">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Add this after the hero section -->
+    <div class="shape-divider">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+      </svg>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">About <span class="highlight">Me</span></h2>
+          <div class="section-subtitle">My journey and expertise</div>
+        </div>
+        
+        <div class="about-content">
+          <div class="about-text">
+            <div class="about-intro">
+              <h3>Frontend Developer & UI/UX Enthusiast</h3>
+              <p>
+                I'm a passionate frontend developer with a keen eye for design and a love for building 
+                intuitive, user-friendly web experiences. I enjoy transforming complex ideas into clean, 
+                elegant, and responsive interfaces.
+              </p>
+            </div>
+            
+            <div class="about-details">
+              <p>
+                Beyond coding, I'm curious about UI/UX best practices, performance optimization, 
+                and accessibility. My mission is to create digital experiences that not only look great but 
+                also feel seamless and inclusive for everyone.
+              </p>
+              <p>
+                With over 5 years of experience in web development, I've worked with various clients 
+                and companies to bring their digital visions to life. I'm constantly learning and evolving 
+                with the ever-changing landscape of web technologies.
+              </p>
+            </div>
+            
+            <div class="about-buttons">
+              <a href="#contact" class="btn btn-primary">
+                <span>Let's Connect</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+              <a href="#" class="btn btn-outline" download>
+                <span>Download Resume</span>
+                <i class="fas fa-download"></i>
+              </a>
+            </div>
+          </div>
+        
+          <div class="about-image">
+            <div class="image-frame">
+              <img src="https://joseckdev.buzz/images/about.jpg" 
+                   alt="Joseck working on a project" 
+                   width="400" height="300" loading="lazy">
+              <div class="frame-border"></div>
+            </div>
+            
+            <div class="about-stats">
+              <div class="stat-item">
+                <div class="stat-number" data-count="50">0</div>
+                <div class="stat-label">Projects</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number" data-count="30">0</div>
+                <div class="stat-label">Happy Clients</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number" data-count="5">0</div>
+                <div class="stat-label">Years Experience</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="timeline">
+          <h3 class="timeline-title">My Journey</h3>
+          <div class="timeline-container">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">2018 - 2019</div>
+                <h4>Web Development Intern</h4>
+                <p>Started my journey as an intern at TechStart Inc., learning the fundamentals of HTML, CSS, and JavaScript.</p>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">2019 - 2021</div>
+                <h4>Junior Frontend Developer</h4>
+                <p>Joined Digital Solutions Ltd. as a junior developer, working on various client projects and improving my skills.</p>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">2021 - Present</div>
+                <h4>Senior Frontend Developer</h4>
+                <p>Currently working as a senior developer at InnovateTech, leading frontend development and mentoring junior developers.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
+          <div class="section-subtitle">My recent work</div>
+        </div>
+        
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="web">Web Apps</button>
+          <button class="filter-btn" data-filter="mobile">Mobile</button>
+          <button class="filter-btn" data-filter="design">UI/UX</button>
+        </div>
+        
+        <div class="project-grid">
+          <!-- Project 1 -->
+          <div class="project-card" data-category="web">
+            <div class="project-image">
+              <img src="https://joseckdev.buzz/images/project1.png" 
+                   alt="E-commerce Website Project" 
+                   width="600" height="400" loading="lazy">
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://github.com/joseckdev/project1" target="_blank" rel="noopener" aria-label="View project on GitHub">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a href="#" aria-label="View live project (coming soon)">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-category">Web App</div>
+              <h3>E-commerce Website</h3>
+              <p>A fully responsive e-commerce website with shopping cart functionality and payment integration.</p>
+              <div class="project-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">React</span>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Project 2 -->
+          <div class="project-card" data-category="web">
+            <div class="project-image">
+              <img src="https://joseckdev.buzz/images/project2.png" 
+                   alt="Portfolio Website Project" 
+                   width="600" height="400" loading="lazy">
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://github.com/joseckdev/project2" target="_blank" rel="noopener" aria-label="View project on GitHub">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a href="https://joseckdev.buzz/demo/project2" target="_blank" rel="noopener" aria-label="View live demo">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-category">Web App</div>
+              <h3>Personal Portfolio</h3>
+              <p>A modern and responsive portfolio to showcase my work, skills, and contact details.</p>
+              <div class="project-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">GSAP</span>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Project 3 -->
+          <div class="project-card" data-category="web">
+            <div class="project-image">
+              <img src="https://joseckdev.buzz/images/project3.png" 
+                   alt="React Dashboard Project" 
+                   width="600" height="400" loading="lazy">
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://github.com/joseckdev/project3" target="_blank" rel="noopener" aria-label="View project on GitHub">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a href="https://joseckdev.buzz/demo/project3" target="_blank" rel="noopener" aria-label="View live demo">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-category">Web App</div>
+              <h3>React Dashboard</h3>
+              <p>An interactive dashboard built with React, featuring charts, authentication, and API integration.</p>
+              <div class="project-tags">
+                <span class="tag">React</span>
+                <span class="tag">Tailwind</span>
+                <span class="tag">API</span>
+                <span class="tag">Chart.js</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project 4 -->
+          <div class="project-card" data-category="mobile">
+            <div class="project-image">
+              <img src="https://joseckdev.buzz/images/project4.png" 
+                   alt="Fitness App Project" 
+                   width="600" height="400" loading="lazy">
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://github.com/joseckdev/project4" target="_blank" rel="noopener" aria-label="View project on GitHub">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a href="https://joseckdev.buzz/demo/project4" target="_blank" rel="noopener" aria-label="View live demo">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-category">Mobile App</div>
+              <h3>Fitness Tracking App</h3>
+              <p>A mobile application for tracking workouts, nutrition, and fitness goals with progress visualization.</p>
+              <div class="project-tags">
+                <span class="tag">React Native</span>
+                <span class="tag">Firebase</span>
+                <span class="tag">Redux</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project 5 -->
+          <div class="project-card" data-category="design">
+            <div class="project-image">
+              <img src="https://joseckdev.buzz/images/project5.png" 
+                   alt="Banking App UI Project" 
+                   width="600" height="400" loading="lazy">
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://github.com/joseckdev/project5" target="_blank" rel="noopener" aria-label="View project on GitHub">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a href="https://joseckdev.buzz/demo/project5" target="_blank" rel="noopener" aria-label="View live demo">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-category">UI/UX Design</div>
+              <h3>Banking App UI</h3>
+              <p>A modern and intuitive UI design for a mobile banking application with focus on user experience.</p>
+              <div class="project-tags">
+                <span class="tag">Figma</span>
+                <span class="tag">UI Design</span>
+                <span class="tag">Prototyping</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project 6 -->
+          <div class="project-card" data-category="web">
+            <div class="project-image">
+              <img src="https://joseckdev.buzz/images/project6.png" 
+                   alt="Task Management App Project" 
+                   width="600" height="400" loading="lazy">
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://github.com/joseckdev/project6" target="_blank" rel="noopener" aria-label="View project on GitHub">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a href="https://joseckdev.buzz/demo/project6" target="_blank" rel="noopener" aria-label="View live demo">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-category">Web App</div>
+              <h3>Task Management App</h3>
+              <p>A collaborative task management application with real-time updates and team collaboration features.</p>
+              <div class="project-tags">
+                <span class="tag">Vue.js</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Socket.io</span>
+                <span class="tag">MongoDB</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="projects-cta">
+          <a href="https://github.com/joseckdev" class="btn btn-outline" target="_blank" rel="noopener">
+            <span>View More on GitHub</span>
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">My <span class="highlight">Skills</span></h2>
+          <div class="section-subtitle">Technologies I work with</div>
+        </div>
+        
+        <div class="skills-content">
+          <div class="skills-category">
+            <h3>Frontend Development</h3>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="fab fa-html5"></i>
+                </div>
+                <div class="skill-info">
+                  <h4>HTML5</h4>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-level="90"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="fab fa-css3-alt"></i>
+                </div>
+                <div class="skill-info">
+                  <h4>CSS3</h4>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-level="85"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="fab fa-js-square"></i>
+                </div>
+                <div class="skill-info">
+                  <h4>JavaScript</h4>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-level="80"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="fab fa-react"></i>
+                </div>
+                <div class="skill-info">
+                  <h4>React</h4>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-level="75"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="fab fa-vuejs"></i>
+                </div>
+                <div class="skill-info">
+                  <h4>Vue.js</h4>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-level="70"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skills-category">
+            <h3>UI/UX Design</h3>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="fas fa-paint-brush"></i>
+                </div>
+                <div class="skill-info">
+                  <h4>UI Design</h4>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-level="75"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="fas fa-user-friends"></i>
+                </div>
+                <div class="skill-info">
+                  <h4>UX Research</h4>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-level="65"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="fab fa-figma"></i>
+                </div>
+                <div class="skill-info">
+                  <h4>Figma</h4>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-level="80"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div class="skill-info">
+                  <h4>Responsive Design</h4>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-level="90"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="fas fa-universal-access"></i>
+                </div>
+                <div class="skill-info">
+                  <h4>Accessibility</h4>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-level="70"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skills-category">
+            <h3>Tools & Technologies</h3>
+            <div class="tools-grid">
+              <div class="tool-item">
+                <div class="tool-icon">
+                  <i class="fab fa-git-alt"></i>
+                </div>
+                <div class="tool-name">Git</div>
+              </div>
+              
+              <div class="tool-item">
+                <div class="tool-icon">
+                  <i class="fab fa-github"></i>
+                </div>
+                <div class="tool-name">GitHub</div>
+              </div>
+              
+              <div class="tool-item">
+                <div class="tool-icon">
+                  <i class="fab fa-npm"></i>
+                </div>
+                <div class="tool-name">NPM</div>
+              </div>
+              
+              <div class="tool-item">
+                <div class="tool-icon">
+                  <i class="fab fa-sass"></i>
+                </div>
+                <div class="tool-name">Sass</div>
+              </div>
+              
+              <div class="tool-item">
+                <div class="tool-icon">
+                  <i class="fab fa-webpack"></i>
+                </div>
+                <div class="tool-name">Webpack</div>
+              </div>
+              
+              <div class="tool-item">
+                <div class="tool-icon">
+                  <i class="fas fa-terminal"></i>
+                </div>
+                <div class="tool-name">CLI</div>
+              </div>
+              
+              <div class="tool-item">
+                <div class="tool-icon">
+                  <i class="fab fa-chrome"></i>
+                </div>
+                <div class="tool-name">DevTools</div>
+              </div>
+              
+              <div class="tool-item">
+                <div class="tool-icon">
+                  <i class="fas fa-database"></i>
+                </div>
+                <div class="tool-name">Firebase</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
+          <div class="section-subtitle">Let's work together</div>
+        </div>
+        
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="contact-text">
+              <h3>Let's Connect</h3>
+              <p>
+                I'm currently available for freelance work and full-time positions. 
+                If you have a project that you want to get started or think you need my help with something, 
+                then get in touch.
+              </p>
+            </div>
+            
+            <div class="contact-details">
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-info-text">
+                  <h4>Email</h4>
+                  <p><a href="mailto:hello@joseckdev.buzz">hello@joseckdev.buzz</a></p>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="contact-info-text">
+                  <h4>Phone</h4>
+                  <p><a href="tel:+254707240711">+254 707-240-711</a></p>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-info-text">
+                  <h4>Location</h4>
+                  <p>Nairobi, Kenya</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="social-links">
+              <h4>Follow Me</h4>
+              <div class="social-icons">
+                <a href="https://github.com/joseckdev" target="_blank" rel="noopener" aria-label="GitHub">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/joseckdev" target="_blank" rel="noopener" aria-label="LinkedIn">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://twitter.com/joseckdev" target="_blank" rel="noopener" aria-label="Twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://codepen.io/joseckdev" target="_blank" rel="noopener" aria-label="CodePen">
+                  <i class="fab fa-codepen"></i>
+                </a>
+                <a href="https://dribbble.com/joseckdev" target="_blank" rel="noopener" aria-label="Dribbble">
+                  <i class="fab fa-dribbble"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="contact-form-container">
+            <form id="contact-form" class="contact-form" 
+                  action="https://formspree.io/f/xnngneva" 
+                  method="POST" novalidate>
+              
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" 
+                       placeholder="John Doe" required 
+                       autocomplete="name">
+              </div>
+            
+              <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" 
+                       placeholder="john@example.com" required 
+                       autocomplete="email">
+              </div>
+            
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" 
+                       placeholder="Project Inquiry" autocomplete="organization-title">
+              </div>
+            
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" 
+                          placeholder="Tell me about your project..." rows="5" required></textarea>
+              </div>
+            
+              <div class="form-submit">
+                <button type="submit" class="btn btn-primary">
+                  <span>Send Message</span>
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </div>
+            
+              <!-- For live feedback after submission -->
+              <div id="form-status" class="form-status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="/" class="logo" aria-label="Joseck Dev Homepage">
+            <span class="logo-text">Joseck</span>
+            <span class="logo-dot"></span>
+          </a>
+          <p>Creating beautiful, functional web experiences</p>
+        </div>
+        
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-column">
+            <h4>Connect</h4>
+            <ul>
+              <li><a href="https://github.com/joseckdev" target="_blank" rel="noopener">GitHub</a></li>
+              <li><a href="https://linkedin.com/in/joseckdev" target="_blank" rel="noopener">LinkedIn</a></li>
+              <li><a href="https://twitter.com/joseckdev" target="_blank" rel="noopener">Twitter</a></li>
+              <li><a href="https://codepen.io/joseckdev" target="_blank" rel="noopener">CodePen</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-column">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Tutorials</a></li>
+              <li><a href="#">Resources</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Joseck Dev. All Rights Reserved.</p>
+        <p>Designed and built with <span class="heart">❤</span> by Joseck</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+  <div class="gradient-bg">
+    <div class="gradient-bg-1"></div>
+    <div class="gradient-bg-2"></div>
+  </div>
+</body>
+</html>
